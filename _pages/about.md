@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Xinyu Ma"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,43 +8,38 @@ redirect_from:
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
+（日本語訳はページの下の方にご覧ください）
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, academicpages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+I am Xinyu Ma, a Ph.D. candidiate in Computer Science at UCLA,
+under the supervision of [Prof. Lixia Zhang](http://www.cs.ucla.edu/~lixia/).
+I am now a Graduate Student Researcher in the [Internet Research Laboratory (IRL)](https://irl.cs.ucla.edu).
+I am working on [Named Data Networking (NDN)](https://named-data.net).
+My current research focuses on decentralized applications on networking and network algorithms.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over -- just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+I received a B.S. in Software Engineering from Beijing Institute of Technology in June, 2017.
+During my undergraduate years, I was a member of Algorithm Lab, focusing on algorithm and ICPC contest.
+Our team got 3rd place in two 2016 Asia Regional Divisions and ranked 57th in the 2017 World Final.
+I also joined the Robotics Lab and attended 2016 RoboCup China Regional.
+Our team got 3rd place in Open Middle Size League Science Challenge.
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+After that, I went to [Discrete Mathmatics Lab](https://www-or.amp.i.kyoto-u.ac.jp/index.html) in Kyoto University to study graph theory.
+Supervised by [Prof. Hiroshi Nagamochi](https://www-or.amp.i.kyoto-u.ac.jp/members/nag/), I did research on graph isomorphism algorithms.
+I dropped out and came to UCLA in the September, 2018.
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+馬キンウと申します。カリフォニア大学ロサンゼルス校（UCLA）の計算機科学（情報学研究科）所属する学生です。
+指導教員は[張　麗霞](http://www.cs.ucla.edu/~lixia/)教授です。
+今は情報[ネットワーキング研究室（IRL）](https://irl.cs.ucla.edu)で院生研究員として、
+[名付きデータネットワーキング（NDN）](https://named-data.net)について研究しております。
+研究テーマは分散型アプリケーションとネットワークのアルゴリズムなどです。
 
-**Markdown generator**
+平成２９年六月、北京理工大学でソフトウェアエンジニアリングの学士号を取得いたしました。
+大学の四年間、アルゴリズム研究会で、アルゴリズムの勉学や国際大学対抗プログラミングコンテスト（ICPC）に身を投げて、
+チームを組んでアジア地区大会に第３位を二回取得し、平成２９年の世界大会に参加しました。
+同時、ロボット研究会も参加し、平成２９年のロボカップ中国大会で、
+開発したシステムが中型リーグのサイエンスチャレンジの第３位を取得しました。
 
-I have also created [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the academicpages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
-
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
-
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
-
-For more info
-------
-More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+その後、平成３０年に京都大学に入学し、情報学研究科数理工学専攻の[離散数理研究室](https://www-or.amp.i.kyoto-u.ac.jp/index.html)に所属し、
+[永持　仁（ひろし）](https://www-or.amp.i.kyoto-u.ac.jp/members/nag/)教授の元で、
+グラフの同型判定アルゴリズムについて研究を始めました。
+同年九月に退学してUCLAに転校しました。

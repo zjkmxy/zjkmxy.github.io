@@ -11,30 +11,29 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* Beijing Institute of Technology, 2013.9 - 2017.6
+  - B.S. Software Engineering
+  - GPA: 92.12/100, Ranking: 1/216
+* Kyoto University, 2018.4 - 2018.9
+  - M.S. Applied Mathematics and Physics, Graduate School of Informatics
+  - Dropped out
+* University of California, Los Angeles, 2018.9 - Present
+  - Ph.D. Computer Science
+  - GPA: 3.89/4.00
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Summer 2020: Google LLC
+  * Software Engineering Internship
+  * Work on Kubernetes
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Programming Language: Python, C++, Assembly, Common Lisp
+* Theoretical Knowledge: Graph Theory, Data Structure, Algorithm, Networking
+* Experienced in debugging and profiling
+
+{% comment %} 
 
 Publications
 ======
@@ -54,6 +53,4 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+{% endcomment %}
