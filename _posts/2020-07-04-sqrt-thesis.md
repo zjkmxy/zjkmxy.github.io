@@ -8,12 +8,12 @@ tags:
 
 When solving a problem, it is common that we have two different strategies that fit in different cases.
 For example, one algorithm may have a better time complexity but uses more memory than the other.
-Or, one is fast when there are only a few of large objects, but the other works beter when there are many small objects.
+Or, one is fast when there are only a few of large objects, but the other works better when there are many small objects.
 However, I found that there usually exists a solution which is a naive mixture of the two strategies, and its performance will be the sqrt of the two.
 
 Introduction
 ======
-It is common that we have tow different stratehies solving a problem.
+It is common that we have tow different strategies solving a problem.
 
 One example is that we want a data structure which supports 2 operations, and we have two candidates:
 
@@ -22,7 +22,7 @@ One example is that we want a data structure which supports 2 operations, and we
 | Operation 1 |     Slow    |     Slow    |
 | Operation 2 |     Fast    |     Fast    |
 
-And we have both operation 1 and 2, so we want a data sturcture which is *not so slow* in either case.
+And we have both operation 1 and 2, so we want a data structure which is *not so slow* in either case.
 
 Another example is that the scale of input has two arguments: $$M$$ and $$N$$.
 One algorithm is fast when $$M$$ is large, like $$O(MN^3)$$;
@@ -55,7 +55,7 @@ More formally,
 - Data: Objects (= empty interface)
 - Operation: Random Query
   * input: an integer $$i$$
-  * outputL the object at position $$i$$
+  * output: the object at position $$i$$
 - Operation: Insertion
   * input: an integer $$i$$ and an object $$A$$
   * output: a list, where $$i$$-th object is $$A$$. All objects before $$i$$ remained untouched;
@@ -73,7 +73,7 @@ Observe that array is easy to index but hard to move.
 Thus, a naive mixture is using linked list to store small pieces of arrays:
 - Each element of a linked list is a "block", i.e. an array of length $$B$$, s.t. $$\frac{1}{2}\sqrt{N}\leq L \leq\sqrt{N}$$.
 - The length of linked list is $$L$$, where $$\sqrt{N}\leq B \leq2\sqrt{N}$$.
-- When query, go over a block once a time, and jump to the emelent when we meet the block containing $$i$$-th element.
+- When query, go over a block once a time, and jump to the element when we meet the block containing $$i$$-th element.
 - When insert, copy the block containing $$i$$ and insert $$A$$ into it.
   - If the block oversize, split it into two.
 - Easy to show that both operation has complexity $$O(\sqrt{N})$$.
@@ -101,7 +101,7 @@ It is easy to figure out the *mean* problem suffices to *sum* and the *median* s
 Two naive methods are array and prefix sum:
 - Array stores every element individually.
 - Prefix sum stores all cumulative sums $$\sum_{k=0}^{i}{x_k}$$.
-  We can get every range sum by a substration, but we need to change $$O(N)$$ elements each time we modify one element.
+  We can get every range sum by a substraction, but we need to change $$O(N)$$ elements each time we modify one element.
 
 | Operation    |    Array    | Prefix Sum  |
 | ------------ | ----------- | ----------- |
@@ -125,7 +125,7 @@ It will be very difficult, though solvable, if we consider modifications, so let
 
 The first strategy is always the brute force one, which takes $$O(N^2)$$ for a query.
 
-The second strategy is to preprocess all numbers' occurence in all ranges.
+The second strategy is to preprocess all numbers' occurrence in all ranges.
 Similar to the idea of prefix sum, it is enough to maintain an array $$f$$ containing prefix frequencies of each number:
 \$$
 f_{i,j} = \sum_{k=0}^{i}{\mathbb{1}_{=}(x_k, x_j)} .
@@ -141,7 +141,7 @@ Let $$f'_{i,j}$$ denote the prefix frequencies of each number, but at a coarse g
 Let $$m'_{i,j}$$ denote the mode from $$i$$-th to $$j$$-th block.
 Now, given a query, we have some ($$<\sqrt{N}$$) blocks and some ($$<2\sqrt{N}$$) uncovered elements.
 The result can be either the mode of the range -- we need to get its correct frequency by going over those uncovered elements;
-or an uncovered element -- we need to enumerate each such number and count its occurence.
+or an uncovered element -- we need to enumerate each such number and count its occurrence.
 
 This may be a little difficult to describe verbally. The pseudo-code looks like this:
 ```python
@@ -188,7 +188,7 @@ Leader Mo's Algorithm
 
 If we are allowed to handle queries offline, then a lot of problems have a sqrt solution.
 The original thinking, proposed by Leader Tao Mo, comes from the fact that
-we can calculate the minimal spanning tree in manhattan distance in $$O(N\log{N})$$,
+we can calculate the minimal spanning tree in Manhattan distance in $$O(N\log{N})$$,
 and the size of this tree is bounded by $$O(N\sqrt{N})$$.
 Here I want to provide a different path towards this algorithm.
 
@@ -197,7 +197,7 @@ Consider the two cases:
 - **All ranges are small $$R_i-L_i < T$$**.
   Then, the complexity of brute force algorithm is $$QT$$, which may be acceptable if $$T$$ is really small.
 - **All ranges are large $$R_i-L_i > T$$, with $$T$$ near $$N$$**.
-  Then, the distances betwen ranges $$|L_j-L_i|+|R_j-R_i|$$ is small.
+  Then, the distances between ranges $$|L_j-L_i|+|R_j-R_i|$$ is small.
   Thus, we can move from a range to another, fixing the counts of numbers.
   The complexity of this algorithm is the sum of all distances, $$N+Q(N-T)$$.
 
@@ -365,7 +365,7 @@ The output of the algorithm is the search result -- a list of webpages sorted by
 
 He wants the algorithm to be super fast, but he only gives us a single core machine, which makes it impossible.
 However, we know his unit tests are very weak: all queries have two keywords; queries on the same dataset share same weights.
-More specificly,
+More specifically,
 - There are $$N$$ webpages and $$K$$ keywords.
 - The likeliness score of website $$i$$ for keyword $$j$$ is $$L_{i,j}$$, a real number between $$0$$ and $$1$$.
   - The likeliness relation is sparse, so only $$C=O(N)$$ numbers are non-zero.
@@ -394,7 +394,7 @@ Look at the $$KC$$ part of the complexity.
 We have $$K^2$$ pairs of keywords, and at most $$N$$ webpages for each keyword.
 Here, $$KN$$ becomes a $$C$$ because likeliness is sparse.
 However, if we do sort every query,
-which is equivalent to only processing those keywords pairs occuring in queries,
+which is equivalent to only processing those keywords pairs occurring in queries,
 then we will have $$QN$$.
 We cannot reduce $$QN$$ to something smaller.
 This is because *not every keyword has few pages*.
@@ -432,7 +432,7 @@ This variant can be solved as follows:
 
 Conclusion
 ======
-No matter the thesis is percise or not, the trick of balancing a trade-off with a sqrt works in a wide range of areas.
+No matter the thesis is precise or not, the trick of balancing a trade-off with a sqrt works in a wide range of areas.
 
 References?
 ======

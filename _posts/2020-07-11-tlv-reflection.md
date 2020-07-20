@@ -11,8 +11,8 @@ TL; DR: Reflection should be used for encoding or serilization.
 
 Forms of Existence
 ======
-Every datum exist in two forms: a structured class used by the application, and an encoded wire used to trasport.
-The struct can be serilized to a buffer as wire; the wire can be parsed to an instance of the struct.
+Every datum exist in two forms: a structured class used by the application, and an encoded wire used to transport.
+The struct can be serialized to a buffer as wire; the wire can be parsed to an instance of the struct.
 ```golang
 // Code from https://github.com/go-ndn/ndn/
 // Class Definition
@@ -34,7 +34,7 @@ func main() {
 ```
 
 Clearly, they are used in different scenarios.
-- Wire is only used for transpotation and storage.
+- Wire is only used for transportation and storage.
   The program do not read or update any field of the wire form before it parses it into a struct.
 - Struct is only used inside the program.
   It cannot be stored to the disk or even passed to another process.
@@ -91,14 +91,14 @@ The encoding procedure has 3 phases:
 
 Related work
 ------
-Recently I looked into some other serilization libraries.
+Recently I looked into some other serialization libraries.
 I should have read good libraries before I design `python-ndn`, but I didn't, just like those `ndn-cxx` designers.
 **"It's much easier to write wrong code than read correct code."**
 But we should read related code works, just as doing research.
 
 - `protobuf-go` basically uses method 2, shown in [this line](https://github.com/protocolbuffers/protobuf-go/blob/e14d6b3cdce27a8743907161e84fa6d07e30266d/proto/encode.go#L153)
 - `encoding/json` in Go uses method 1, but it starts from an empty slice and keeps appending (self-adjusting),
-  instead of allocateing maximum size.
+  instead of allocating maximum size.
   But generally people do not care performance that much when they choose json.
 - In C#, `BinaryFormatter` uses `MemoryStream`, which is also a self-adjusting data structure.
   However, when we call `ToArray` to get the result, it makes a copy that has no extra bytes.
@@ -107,7 +107,7 @@ Procedural Variables
 ======
 One thing makes `python-ndn` different from all work above is it has 3 phases.
 After we calculated the size of every field at phase 1, we don't want to redo it at phase 2.
-Because the "Length" in TLV also has a varaint size, it is not feasible for a nested struct to
+Because the "Length" in TLV also has a variant size, it is not feasible for a nested struct to
 leave the length blank and process it children first.
 Thus, we have to remember all the sizes during the encoding procedure.
 
@@ -144,13 +144,13 @@ Reflection & Flexibility
 
 I don't intend to offense anyone, but when people don't understand Object-Oriented Programming or design patterns,
 dogmatic usage of them usually leads to over complicated solution.
-The designers of `ndn-cxx` persue abstraction and flexibility by a pure OO way, but it does not work very well.
+The designers of `ndn-cxx` pursue abstraction and flexibility by a pure OO way, but it does not work very well.
 
 The problem is that in C++, the base class has no info about the derived class.
 Thus, we cannot just write an `encode` function in a `Message` class, and let it work for all concrete messages.
 If every subclass, e.g. `Data`, must implement its own `encode` and `decode` function,
 what's the meaning of giving them a shared base class?
-Also, the code looks very redundent. Let's use Go psudo code for example:
+Also, the code looks very redundant. Let's use Go pseudo code for example:
 ```golang
 type Data struct {
   // Definition is a copy of the spec
@@ -244,10 +244,10 @@ Signature
 ======
 
 Signature is tricky
-- It adds new types of procedural varaibles: pointers to parts covered by signature and hash of it.
+- It adds new types of procedural variables: pointers to parts covered by signature and hash of it.
 - ECDSA signature has a flexible size, so we cannot get accurate length in phase 1.
 - There is no related work that handles it.
-- Keys are needed to sign or verify the signaure, which seems not related to encoding.
+- Keys are needed to sign or verify the signature, which seems not related to encoding.
 - Not every packet is signed.
 - In some *rare* case, the application needs to fetch a certificate from the network.
 
@@ -364,7 +364,7 @@ I can come up with 3 ways to handle Name:
 
 I prefer 3 because we can reuse most operations defined by `bytes` for Component.
 - The [Canonical Order](https://named-data.net/doc/NDN-packet-spec/current/name.html#canonical-order) of Component is exactly
-  the lexigraphical order of `bytes`.
+  the lexicographical order of `bytes`.
 - Memory copy works for Component.
 - The Type of a Component is generally the first byte. We can write a function to handle multi-byte cases.
 - I don't think developers will modify existing Components. They will create new Components instead.
