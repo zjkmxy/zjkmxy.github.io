@@ -142,6 +142,6 @@ From discussion above, it seems that the flow of **Data** reflect the traffic be
 
 References
 ======
-- Baran, Paul, On Distributed Communications Networks. Santa Monica, CA: RAND Corporation, 1962.
-- DataCadamia, Distributed System - Network Partition. https://datacadamia.com/data/distributed/network_partition.
+- Baran, Paul. On Distributed Communications Networks. Santa Monica, CA: RAND Corporation, 1962.
+- DataCadamia. Distributed System - Network Partition. https://datacadamia.com/data/distributed/network_partition.
 - Istio, Architecture. https://istio.io/latest/docs/ops/deployment/architecture, 2020.
