@@ -10,7 +10,7 @@ redirect_from:
 
 （日本語訳はページの下の方にご覧ください）
 
-I am Xinyu Ma, a Ph.D. candidiate in Computer Science at UCLA,
+I am Xinyu Ma, a Ph.D. candidate in Computer Science at UCLA,
 under the supervision of [Prof. Lixia Zhang](http://www.cs.ucla.edu/~lixia/).
 I am now a Graduate Student Researcher in the [Internet Research Laboratory (IRL)](https://irl.cs.ucla.edu).
 I am working on [Named Data Networking (NDN)](https://named-data.net).
