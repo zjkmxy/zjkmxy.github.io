@@ -63,9 +63,11 @@ Traditional libraries use 3. For example, in WinAPI, `WideCharToMultiByte` and `
 In C++ std, `sprintf`.
 However, this kind of API is very unfriendly and does not have much sense if there is a GC.
 
-1 is widely used by current NDN library, such as [ndn-cxx](https://github.com/named-data/ndn-cxx),
+1 and 2 are used by current NDN library, such as [ndn-cxx](https://github.com/named-data/ndn-cxx),
 [ndn-cpp](https://github.com/named-data/ndn-cpp) and [go-ndn](https://github.com/go-ndn/tlv).
-I haven't talked with the designer, but I guess the reasons are following:
+ndn-cxx mainly uses 2, but due to the Signature problem, 1 is used for Data packets.
+The details can be found in [this note](https://redmine.named-data.net/issues/4866#note-1). (Thank Junxiao for the link)
+I think the benefits include the following:
 - It is easy to write the code.
   There is only one pass. Just prepend elements into the wire.
   Variable length does not make the problem harder here.
