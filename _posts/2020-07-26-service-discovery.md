@@ -10,6 +10,8 @@ tags:
 There is always a need for service discovery and load balancing, but no universal solution.
 Sometimes naive ways may satisfy most needs.
 
+{% include toc %}
+
 Introduction
 ======
 
@@ -411,5 +413,5 @@ References
 - HashiCorp. [Consul Architecture](https://www.consul.io/docs/internals/architecture). April 13, 2020.
 - Knewton. [Eureka! Why You Shouldn’t Use ZooKeeper for Service Discovery](https://medium.com/knerd/eureka-why-you-shouldnt-use-zookeeper-for-service-discovery-4932c5c7e764). Dec 15, 2014.
 - Márton Waszlavik. [Demystifying CAP theorem, Eventual Consistency and exactly once delivery guarantee](https://medium.com/@marton.waszlavik/demystifying-cap-theorem-eventual-consistency-and-exactly-once-delivery-guarantee-ed20cf7cc877). Oct 11, 2016.
-- Daniel Abadi. [DBMS Musings](http://dbmsmusings.blogspot.com/2019/07/overview-of-consistency-levels-in.html). Jul 25, 2019.
+- Daniel Abadi. [Overview of Consistency Levels in Database Systems](http://dbmsmusings.blogspot.com/2019/07/overview-of-consistency-levels-in.html). DBMS Musings. Jul 25, 2019.
 - NDN Team. [NDN-Lite Service Discovery](https://github.com/named-data-iot/ndn-lite/wiki/Service-Discovery). May 18, 2020.
