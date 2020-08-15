@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+Click [here]({{ site.baseurl }}{% link files/cv.pdf %}) for a formal CV.
+
 Education
 ======
 * Beijing Institute of Technology, 2013.9 - 2017.6
@@ -25,12 +27,20 @@ Work experience
 ======
 * Summer 2020: Google LLC
   * Software Engineering Internship
-  * Work on Kubernetes
-  
+  * Work in Kubernetes Networking team.
+
+Awards
+======
+* 2017 ACM-ICPC World Final - 57th place
+* 2016 ACM-ICPC Asia Regional Hong Kong Division - Second Runner Up
+* 2016 ACM-ICPC Asia Regional Shenyang Division - Golden Medal (3rd place)
+* 2016 RoboCup China Open Middle Size League Science Challenge - 3rd Place
+
 Skills
 ======
-* Programming Language: Python, C++, Assembly, Common Lisp
+* Programming Language: Python, Go, C++, Assembly, Common Lisp
 * Theoretical Knowledge: Graph Theory, Data Structure, Algorithm, Networking
+* Familier with Google Cloud and Kubernetes
 * Experienced in debugging and profiling
 
 {% comment %} 
