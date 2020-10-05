@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Xinyu Ma"
 title_separator          : "-"
 name                     : &name "Xinyu Ma"
-description              : &description "PH.D. Student in CS"
+description              : &description "PH.D. Candidate in CS"
 url                      : https://zjkmxy.github.io # the base hostname & protocol for your site e.g. "http://127.0.0.1:4000"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "zjkmxy/zjkmxy.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Xinyu Ma"
   avatar           : "profile.jpg"
-  bio              : "Ph.D. Student in Computer Science"
+  bio              : "Ph.D. Candidate in Computer Science"
   location         : "UCLA"
   employer         :
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
