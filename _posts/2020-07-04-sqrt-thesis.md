@@ -4,6 +4,7 @@ date: 2020-07-04
 permalink: /posts/2020/07/sqrt-thesis/
 tags:
   - algorithm
+  - data structure
 ---
 
 When solving a problem, it is common that we have two different strategies that fit in different cases.
@@ -49,7 +50,7 @@ Therefore, I think it's safe to omit the authors.
 
 Unrolled Linked List
 ------
-There are so many "versions" or "names" of this simple data structure: unrolled linked list, sqrt-decomposed array, STL rope, etc.
+There are so many "versions" or "names" of this simple data structure: unrolled linked list, chunked array, STL rope, etc.
 The problem is trivial: we want to maintain a linear list which supports insertion and random query.
 More formally,
 - Data: Objects (= empty interface)
@@ -136,7 +137,7 @@ then $$m_{i,j+1}$$ is either $$m_{i,j}$$ or $$x_{j+1}$$, which can be decided in
 After all, we can handle each query in $$O(1)$$.
 However, this needs $$O(N^2)$$ for the two-step initialization.
 
-Now it's the time for decomposed array.
+Now it's the time for chunked array.
 Let $$f'_{i,j}$$ denote the prefix frequencies of each number, but at a coarse granularity -- $$i$$ indicates a block.
 Let $$m'_{i,j}$$ denote the mode from $$i$$-th to $$j$$-th block.
 Now, given a query, we have some ($$<\sqrt{N}$$) blocks and some ($$<2\sqrt{N}$$) uncovered elements.
@@ -168,10 +169,10 @@ Hence, we can handle the query in $$O(\sqrt{N})$$.
 The initialization seems to be $$O(N^2)$$, but can be $$O(N\sqrt{N})$$ if we implement it with care.
 Thus, we get a mixed algorithm with sqrt init time and sqrt query time.
 
-|   Operation    |    Array    | Prefix Freq | Decomp Array |
-| -------------- | ----------- | ----------- | ------------ |
-|  Ranged Query  |     O(N)    |     O(1)    |  O(sqrt(N))  |
-| Initialization |     O(1)    |    O(N^2)   | O(N*sqrt(N)) |
+|   Operation    |    Array    | Prefix Freq | Chunked Array |
+| -------------- | ----------- | ----------- | ------------- |
+|  Ranged Query  |     O(N)    |     O(1)    |  O(sqrt(N))   |
+| Initialization |     O(1)    |    O(N^2)   | O(N*sqrt(N))  |
 
 Since mode is not statistically mergable, segment tree does not work here.
 Also, the best complexity considering modification seems to be $$O(N^\frac{5}{3})$$. (I'm not sure)
