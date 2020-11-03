@@ -4,6 +4,7 @@ date: 2020-11-01
 permalink: /posts/2020/11/residue-theorem/
 tags:
   - complex analysis
+  - combinatorics
 ---
 
 This post makes notes on residue theorem and its application,
@@ -149,6 +150,9 @@ Asymptotics of Generating Functions
 - The *location* of a function’s singularities dictates the *exponential growth* ($A^n$) of its coefficients.
 - The *nature* of a function’s singularities determines the associate *subexponential factor* ($\theta(n)$).
 
+Exponential Growth
+------
+
 **Def**: $\\{a_n\\}$ is of *exponential order* $K^n$ if for any $\epsilon>0$,
 $|a_n|$ exceeds $(K-\epsilon)^n$ infinitely often and is dominated by $(K+\epsilon)^n$ cofinitely.
 
@@ -216,7 +220,121 @@ $$
 \frac{1}{n!} \leq \frac{e^n}{n^n}
 $$
 
-To Be Continued ...
+Subexponential Factor
+------
+
+One can show that if singularities of $f(z)$ are polar, then $\theta(n)$ is a polynomial.
+
+**Def**: If $f(z) = \frac{N(z)}{D(z)}$ with $N, D$ being polynomials, $f(z)$ is a *rational function*.
+
+Coefficients of rational functions satisfy linear recurrence relations with constant coefficients:
+
+$$
+[z^n ]f(z)D(z) = \sum_{j=0}^{m}d_j f_{n-j} = 0 \qquad \text{for all}\  n>\mathrm{deg}(N)
+$$
+
+**Rational Function Case**: If $f(z) = \frac{N(z)}{D(z)}$ is a rational function that is analytic at 0 and
+has poles at $a_1, \ldots, a_m$, then its coefficients are a sum of exponential–polynomials.
+That is, for $n$ larger than $n_0:= \mathrm{deg}(N) - \mathrm{deg}(D)$:
+
+$$
+f_n := [z^n ]f(z) = \sum_{j=1}^{m}P_j(n)a_j^{-n}
+$$
+
+Furthermore, the degree of $P_j$ is equal to the order of the pole of $f$ at $a_j$ minus one.
+
+**Proof**:
+Apply the partial fraction expansion:
+
+$$
+f(z) = Q(z) + \sum_{j=1}^{m}\frac{c_j}{(z-a_j)^{r_j}}
+$$
+
+where $Q$ is of degree $n_0$.
+Since
+
+$$
+[z^n ]\frac{1}{(z-a)^r} = \frac{(-)^r}{a^r}[z^n ]\frac{1}{(1-\frac{z}{a})^r} =
+\frac{(-)^r}{a^r} {n+r-1 \choose r-1} a^{-n}
+$$
+
+The binomial coefficient is a polynomial of degree $r − 1$ in $n$.
+Collect all terms.
+
+**Cor**: If $f(z) = \frac{N(z)}{(z-a)^r}$ that has a single dominant pole $a$ with order $r$, then
+
+$$
+f_n = (-)^r\frac{C}{(r-1)!}a^{-r}a^{-n}n^{r-1}\left( 1+O\left(\frac{1}{n}\right) \right)
+\quad \text{with} \quad C = \lim_{z\to a}(z-a)^r f(z)
+$$
+
+This is a direct result of the theorem. (The book has a typo)
+For $r=1$, one can verifies:
+
+$$
+\frac{c}{x-a} = - \frac{\frac{c}{a}}{1 - \frac{x}{a}} = -\frac{c}{a}a^{-n}x^{n}
+$$
+
+
+*Example*: Fibonacci numbers have OGF $F(z) = \frac{z}{1 - z - z^2}$.
+The poles are $a_1 = - \varphi = -\frac{\sqrt{5}+1}{2}$ and $a_2 = \psi = \frac{\sqrt{5} - 1}{2}$.
+$\operatorname{res} F(\psi) = \frac{\sqrt{5} - 5}{10}$, $\operatorname{res} F(-\varphi) = \frac{-\sqrt{5} - 5}{10}$.
+Thus,
+
+$$
+f_n \sim \frac{1}{\sqrt{5}}\psi^{-n}(1 + O(1/n)) = \frac{1}{\sqrt{5}}\varphi^{n}(1 + O(1/n))
+$$
+
+Actually,
+
+$$
+f_n = \frac{1}{\sqrt{5}} (\varphi^n - (-\varphi)^{-n})
+$$
+
+**Analytic Function Case**:
+If $f(z)$ is analytic at $\|z\| \leq R$ except for poles $a_1, \ldots, a_m$.
+Then, there exist $m$ polynomials $P_j$ s.t.
+
+$$
+f_n := [z^n ]f(z) = \sum_{j=1}^{m}P_j(n)a_j^{-n} + O(R^{-n})
+$$
+
+Furthermore, the degree of $P_j$ is equal to the order of the pole of $f$ at $a_j$ minus one.
+
+**Proof**: (The 1st one by the book)  
+Take the Laurant expansion of $f(z)$ at $a$:
+
+$$
+f(z) = \sum_{k\geq r} c_{a,k}(z-a)^k = S_a(z) + H_a(z)
+$$
+
+where $S_a$ is the principal part and $H_a$ is the regular part.
+Note that $S_a$ is polynomial.
+Let $S = \sum_{j}S_{a_j}$.
+Observe that and $f-S$ is analytic for $\|z\| \leq R$.
+Then.
+
+$$
+f_n := [z^n ]f(z) = [z^n ]S(z) + [z^n ] (f-S)(z)
+$$
+
+The coefficient of $S$ is obtained by the polynomial theorem.
+And, by saddle-point bound at $z=R$,
+
+$$
+|[z^n ] (f-S)(z)| = \frac{1}{2\pi}\left| \oint_{|z|=R} (f(z) - S(z))\frac{\mathrm{d}z}{z^{n+1}} \right|
+\leq \frac{1}{2\pi} \frac{O(1)}{R^{n+1}} 2\pi R
+$$
+
+*example*: The EGF of the number of surjections $R(z) = \frac{1}{2 - e^z}$ has
+a dominant pole $a = \ln 2$ of order $1$.
+$\operatorname{res} R(a) = -\frac{1}{2}$.
+Thus,
+
+$$
+\frac{r_n}{n!} \sim \frac{1}{2\ln 2}(\ln 2)^{-n} (1 + O(1/n))
+$$
+
 
 <!--Analytic Combinatorics p259-269-->
 
