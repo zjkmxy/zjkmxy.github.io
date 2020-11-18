@@ -156,8 +156,9 @@ Exponential Growth
 **Def**: $\\{a_n\\}$ is of *exponential order* $K^n$ if for any $\epsilon>0$,
 $|a_n|$ exceeds $(K-\epsilon)^n$ infinitely often and is dominated by $(K+\epsilon)^n$ cofinitely.
 
+<!-- % \newcommand\bowtie{\mathrel\triangleright\joinrel\mathrel\triangleleft}   -->
+
 $$
-% \newcommand\bowtie{\mathrel\triangleright\joinrel\mathrel\triangleleft}
 a_n \bowtie K^n \qquad \text{iff} \qquad \lim \sup |a_n|^{1/n} = K
 $$
 
