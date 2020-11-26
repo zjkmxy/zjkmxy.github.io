@@ -1,6 +1,6 @@
 ---
 title: 'Algebra Miscs'
-date: 2020-11-03
+date: 2020-11-05
 permalink: /posts/2020/11/algebra-misc/
 tags:
   - algebra

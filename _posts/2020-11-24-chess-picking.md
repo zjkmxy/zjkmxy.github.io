@@ -1,6 +1,6 @@
 ---
 title: 'Chess Picking Problem'
-date: 2020-11-03
+date: 2020-11-24
 permalink: /posts/2020/11/chess-picking/
 tags:
   - algorithm
@@ -51,8 +51,8 @@ Number of Orbits
 We can prove this is the only graph.
 - If there is a cycle of length $c< n+1$, then the rest $2n-c$ elements will have only $n-c+1$ edges.
   Thus, there exists at least $n-1$ nodes that does not have an outgoing edge.
-  Pick the $c$ nodes from the cycle and $n-c$ nodes with 0 degree, and we get a cut.
-- If there is no cycle at all, i.e. forest, then we can simply sort nodes in the topological order and take the last $n$ ones.
+  Pick the $c$ nodes from the cycle and $n-c$ nodes with 0 outgoing degree, and we get a cut.
+- If there is no cycle at all, e.g. forest, then we can simply sort nodes in the topological order and take the last $n$ ones.
 
 Thus, $\|M/A\| = 1$. A (somehow) surprising result.
 
@@ -66,7 +66,7 @@ Consider $|\mathrm{stab}_{A}(x)|$:
 - We can reorder the $n+2,\ldots,2n$ rows in any permutation, as long as we do the same to those columns: $(n-1)!$
 - For the cycle part, the stablizer set size is equal to automorphisms of an *unlabeled* cycle: $2(n+1)$
   - It's hard to describe why verbally. But you can have a try: pick any row in the cycle to be the first row, and
-    you'll find there is exactly 2 ways to do the rest.
+    you'll find there are exactly 2 ways to do the rest.
 
 Thus, the total number is $\|M\| = \frac{(2n)!^2}{2(n-1)!(n+1)}$.
 
@@ -84,4 +84,8 @@ PS: Complexity
 If the answer is $\|M\|$ modulo $p$, then we have a faster algorithm $O(\sqrt{n}\log n)$ via multipoint evaluation.
 See [here](https://min-25.hatenablog.com/entry/2017/04/10/215046).
 
-(TBD: Will explain it if I have time in future)
+
+Reference
+======
+- [Polynomial Algorithms](https://brooksj.com/2019/07/24/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9B%B8%E5%85%B3%E7%AE%97%E6%B3%95%E9%9B%86%E6%88%90/)
+- [Factorial mod Prime in Rust](https://koba-e964.hatenablog.com/entry/2019/05/22/020912)
