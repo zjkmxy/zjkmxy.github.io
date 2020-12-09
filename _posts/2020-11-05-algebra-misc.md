@@ -284,6 +284,7 @@ an automorphism $\varphi$ on it should be decided by $\varphi(c)$.
 Given that every $c^k$ where $k$ is coprime to $n$ is a generator,
 there are $\phi(n)$ automorphisms.
 Actually, $\mathrm{Aut}(C_n) \cong C_n^{\times}$, with the latter one denotes the reduced residue system group of $n$.
+(i.e. unit group of ring $\mathbb{Z}/n$)
 
 When $n$ is prime, by the existence of primitive root, $\mathrm{Aut}(C_n) \cong C_{n-1}$.
 
