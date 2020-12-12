@@ -1,3 +1,4 @@
 {
-  "markdown-preview-enhanced.mathRenderingOption": "KaTeX"
+  "markdown-preview-enhanced.mathRenderingOption": "KaTeX",
+  "python.pythonPath": "/usr/local/bin/python3"
 }
