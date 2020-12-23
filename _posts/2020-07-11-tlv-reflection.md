@@ -81,9 +81,14 @@ Thus, the producer application, such as a file server, may want to segment and s
 and then cache those packet in memory.
 Intuitively, this will save some calculation power and reduce the latency.
 However, this may lead to a huge waste of memory.
-As every Interest and Data, no matter how small it is, takes the maximum MTU (8800B).
+As every Data, no matter how small it is, takes the size of the buffer reserved before encoding.
+The default value of this reserved buffer size is set to be the maximum MTU (8800B).
+(Code can be found [here](https://github.com/named-data/ndn-cxx/blob/fe24bf84129d71569d13af918a394ccc9c56a999/ndn-cxx/security/key-chain.cpp#L454-L455), which calls [this constructor](https://github.com/named-data/ndn-cxx/blob/2c1d349bdb9a1f7b2a0b07ea11e6f24650bde6cd/ndn-cxx/encoding/encoding-buffer.hpp#L40-L43) with default buffer size)
 This waste of memory is observed in [ndnputchunks](https://github.com/named-data/ndn-tools) and
 [NFD](https://github.com/named-data/NFD).
+
+Note: This only happens when one tries to sign the packet. Encoding a Data without signature does not waste any memory.
+Thank Professor Alex Afanasyev for pointing this out.
 
 Therefore, [python-ndn](https://github.com/zjkmxy/python-ndn) chooses 2.
 The encoding procedure has 3 phases:
