@@ -11,6 +11,8 @@ This post makes notes on residue theorem and its application,
 since most non-mathematicians only need to remember this after learning complex analysis.
 Some definitions may be not defined very rigorously from a complex analysis view.
 
+{% include toc %}
+
 Isolated Singularity
 ======
 
