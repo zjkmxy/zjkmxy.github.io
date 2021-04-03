@@ -6,8 +6,8 @@ tags:
   - functional analysis
 ---
 
-京都大学の応用解析学通論Bのノート  
-<!-- [ダウンロード]({{ site.baseurl }}{  % link files/applied-functional.pdf %  }) -->
+京都大学の応用解析学通論Ｂのノート  
+[ダウンロード]({{ site.baseurl }}{% link files/applied-functional.pdf %})
 
 （講師：久保　雅義）  
 １　ノルム空間  
