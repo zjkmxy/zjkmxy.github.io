@@ -1,0 +1,94 @@
+facebook:
+  label: Meta
+  permalink: /facebook
+  description: Meta related stuff
+
+algorithm:
+  label: Algorithm
+  permalink: /algorithm
+  description: Algorithm
+
+data-structure:
+  label: Data structure
+  permalink: /data-structure
+  description: Data structure
+
+ndn:
+  label: NDN
+  permalink: /ndn
+  description: Named-Data Networking
+
+network:
+  label: Networking
+  permalink: /network
+  description: Networking
+
+api:
+  label: API
+  permalink: /api
+  description: API
+
+term:
+  label: Terminology
+  permalink: /term
+  description: Terminology and concepts
+
+service-dicvovery:
+  label: Service Discovery
+  permalink: /service-dicvovery
+  description: Service Discovery
+
+service-invocation:
+  label: Service Invocation
+  permalink: /service-invocation
+  description: Service Invocation
+
+network-flow:
+  label: Network Flow
+  permalink: /network-flow
+  description: Network Flow algorithms
+
+combinatorics:
+  label: Combinatorics
+  permalink: /combinatorics
+  description: Combinatorics
+
+complex-analysis:
+  label: Complex Analysis
+  permalink: /complex-analysis
+  description: Complex analysis
+
+course-review:
+  label: Course Review
+  permalink: /course-review
+  description: Notes and review of UCLA courses
+
+math:
+  label: Math
+  permalink: /math
+  description: Math
+
+algebra:
+  label: Algebra
+  permalink: /algebra
+  description: Algebra
+
+logic:
+  label: Logic
+  permalink: /logic
+  description: Mathematical logic
+
+security:
+  label: Security
+  permalink: /security
+  description: Security related
+
+prolang:
+  label: Programming Language
+  permalink: /prolang
+  description: Programming language-specific
+
+geometry:
+  label: Geometry
+  permalink: /geometry
+  description: Geometry
