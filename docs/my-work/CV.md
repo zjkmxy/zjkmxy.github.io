@@ -8,13 +8,13 @@ sidebar_position: 1
 
 * University of California, Los Angeles, Sep 2018–Dec 2024
   - Ph.D. Computer Science
-  - GPA: 3.935/4.00
+  - GPA: 3.935/4.000
 * Kyoto University, Apr 2018–Sep 2018
   - M.S. Applied Mathematics and Physics, Graduate School of Informatics
   - Dropped out without a degree
 * Beijing Institute of Technology, Sep 2013–Jun 2017
   - B.S. Software Engineering
-  - GPA: 92.12/100, Ranking: 1/216
+  - GPA: 3.814/4.000 (92.12/100), Ranking: 1/216
 
 ## Work experience
 
