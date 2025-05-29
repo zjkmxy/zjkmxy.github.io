@@ -92,3 +92,8 @@ geometry:
   label: Geometry
   permalink: /geometry
   description: Geometry
+
+misc:
+  label: Misc
+  permalink: /misc
+  description: Miscellaneous

@@ -61,6 +61,7 @@ sidebar_position: 1
 * Chinese: Native
 * Japanese: Business Level (N1 159)
 * English: Business Level (TOFEL 99)
+* Arabic: Beginner
 
 ## Skills
 
