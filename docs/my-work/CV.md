@@ -59,8 +59,8 @@ sidebar_position: 1
 ## Lanaguages
 
 * Chinese: Native
-* Japanese: Business Level (N1 159)
-* English: Business Level (TOFEL 99)
+* Japanese: Advanced Level (N1 159, CEFR C1)
+* English: Advanced Level (CELPIP 10, CEFR C1)
 * Arabic: Beginner
 
 ## Skills
